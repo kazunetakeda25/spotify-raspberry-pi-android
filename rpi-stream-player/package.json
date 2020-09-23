@@ -1,0 +1,19 @@
+{
+  "name": "rpi-stream-player",
+  "version": "1.0.0",
+  "description": "RPi Stream Player",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SweetMei25/RPi-Stream-Player.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "keypress": "^0.2.1",
+    "puppeteer": "^1.8.0"
+  },
+  "devDependencies": {}
+}

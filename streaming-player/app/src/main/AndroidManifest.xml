@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.rpi.streaming.streamingplayer">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ConnectedDevicesListingActivity"/>
+        <activity android:name=".ScanAvailableDevicesActivity"/>
+        <activity android:name=".PlaylistActivity"/>
+        <activity android:name=".SpotifyPlaylistActivity"/>
+        <activity android:name=".TuneInPlaylistActivity"/>
+        <activity android:name=".LocalPlaylistActivity"/>
+        <activity android:name=".SettingsActivity"/>
+        <activity android:name=".TuneInMainCategoryListingActivity"/>
+        <activity android:name=".MusicSourceListingActivity"/>
+        <activity android:name=".TuneInSubCategoryListingActivity"/>
+        <activity android:name=".TuneInMusicListingActivity"/>
+        <activity android:name=".SettingsLocalActivity"/>
+        <activity android:name=".SettingsPlayerSetupActivity"/>
+        <activity android:name=".SettingsTuneInActivity"/>
+        <activity android:name=".SettingsSpotifyActivity"/>
+        <activity android:name=".TuneInNowPlayingActivity"/>
+        <activity android:name=".LocalMusicServerListingActivity"/>
+        <activity android:name=".LocalMusicListingActivity"/>
+        <activity android:name=".LocalMusicCategoryListingActivity"/>
+        <activity android:name=".LocalNowPlayingActivity"/>
+        <activity android:name=".ConnectLocalSourceActivity"/>
+        <activity android:name=".ConnectDeviceActivity"/>
+        <activity android:name=".SettingsLocalModifyActivity"/>
+    </application>
+
+</manifest>

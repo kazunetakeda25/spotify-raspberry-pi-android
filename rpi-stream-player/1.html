@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script>
+        window.onSpotifyWebPlaybackSDKReady = () => {
+
+            const access_token = 'BQAQEJiVQ0_Wy2H7SgN9qiuCiJp2p0V4g8GmNXj9xb6UM-pzgjNYmFT8CakDipfRh-Y5UE1MQ1cq-CuLHo1BT3pcLofhX-VZhJg4E9W0yKx78PMTi3MhzZKHN_3_a7YHZyDGkao9xg_mA8KoWI3TrwU0uwCd2JX6SVjNVQq9WU2ZjvbxrkOF_z4D-_Hp';
+            const track_url = 'spotify:track:7xGfFoTpQ2E7fRF5lN10tr';
+            const client_id = 'e0e7aa43dbf14f148b3098446115c2fd';
+            let volume_percentage = 100;
+            let setPause = false;
+
+            // fetch('https://accounts.spotify.com/authorize', {
+            //     method: 'GET',
+            //     body: {
+            //     	'response_type': 'token', 
+            //     	'client_id': client_id, 
+            //     	'redirect_uri': '', 
+            //     	'scope': 'streaming user-read-birthdate user-read-email user-modify-playback-state user-read-private', 
+            //     	'show_dialog': 'false'
+            //     }, 
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     }
+            // })
+     //        .then(function(response) {
+     //        	console.log(response.json());
+			  //   return response.json();
+		  	// })
+
+            const player = new Spotify.Player({
+                name: 'Raspberry Pi Spotify Player',
+                getOAuthToken: cb => {
+                    cb(access_token);
+                }
+            });
+            player.addListener('initialization_error', ({
+                message
+            }) => {
+                console.error(message);
+            });
+            player.addListener('authentication_error', ({
+                message
+            }) => {
+                console.error(message);
+            });
+            player.addListener('account_error', ({
+                message
+            }) => {
+                console.error(message);
+            });
+            player.addListener('playback_error', ({
+                message
+            }) => {
+                console.error(message);
+            });
+            player.addListener('player_state_changed', state => {
+                console.log(state);
+            });
+            player.addListener('ready', ({
+                device_id
+            }) => {
+                console.log('Ready with Device ID', device_id);
+                fetch(`https://api.spotify.com/v1/me/player/play?device_id=${device_id}`, {
+                    method: 'PUT',
+                    body: JSON.stringify({
+                        uris: [track_url]
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${access_token}`
+                    },
+                });
+            });
+            player.addListener('not_ready', ({
+                device_id
+            }) => {
+                console.log('Not Connected', device_id);
+            });
+            player.connect().then(success => {
+                if (success) {
+                    console.log('Connected');
+                    player.getVolume().then(volume => {
+						volume_percentage = volume * 100;
+						console.log(`Volume: ${volume_percentage}%`);
+					});
+					// player.setVolume(volume_percentage / 100).then(() => {
+					//	console.log(`Volume: ${volume_percentage}%`);
+					// });
+					// player.pause().then(() => {
+					// 	console.log('Paused');
+					// });
+					// player.resume().then(() => {
+					// 	console.log('Resume');
+					// });
+                }
+            });
+        };
+    </script>
+</body>
+</html>

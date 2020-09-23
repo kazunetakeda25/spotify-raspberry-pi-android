@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">StreamingPlayer</string>
+    <string name="audioSeekPosition">com.rpi.streaming.streamingplayer.audioSeekPosition</string>
+    <string name="noTuneInPlaylistItemsWarningText">Currently no songs added to the TuneIn playlist. To add new songs, click
+        the menu item and click the add source button.
+    </string>
+    <string name="noLocalPlaylistItemsWarningText">Currently no songs added to the Local playlist. To add new songs, click
+        the menu item and click the add source button.
+    </string>
+    <string name="noSpotifyPlaylistItemsWarningText">Currently no songs added to the Spotify playlist. To add new songs, click
+        the menu item and click the add source button.
+    </string>
+    <string name="deviceStatusConnected">Connected</string>
+</resources>

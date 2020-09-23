@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <ImageView
+            android:layout_width="150dp"
+            android:layout_height="40dp" android:src="@drawable/playlist_image"
+            android:id="@+id/playlistImage"
+            android:layout_marginTop="32dp" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp" android:contentDescription="PlayListImage"/>
+    <Button
+            android:text="Spotify Playlist"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spotifySourceButton"
+            android:textAppearance="@style/TextAppearance.AppCompat" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/playlistImage"/>
+    <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp" android:src="@drawable/playlist"
+            android:id="@+id/playlistIcon"
+            android:elevation="2dp" app:layout_constraintStart_toStartOf="@+id/spotifySourceButton"
+            app:layout_constraintEnd_toEndOf="@+id/spotifySourceButton"
+            app:layout_constraintTop_toTopOf="@+id/spotifySourceButton"
+            app:layout_constraintBottom_toBottomOf="@+id/spotifySourceButton"
+            app:layout_constraintHorizontal_bias="0.0" android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginRight="16dp"/>
+    <Button
+        android:text="TuneIn Playlist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tuneinPlaylistButton"
+        android:textAppearance="@style/TextAppearance.AppCompat" android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/spotifySourceButton" android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp" android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"/>
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp" android:src="@drawable/playlist"
+        android:id="@+id/playlistIcon2"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tuneinPlaylistButton"
+        app:layout_constraintTop_toTopOf="@+id/tuneinPlaylistButton"
+        app:layout_constraintEnd_toEndOf="@+id/tuneinPlaylistButton"
+        app:layout_constraintStart_toStartOf="@+id/tuneinPlaylistButton" app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginLeft="16dp" android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"/>
+    <Button
+        android:text="Local Storage Network Playlist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/localPlaylistButton"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/tuneinPlaylistButton"
+        android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"/>
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp" android:src="@drawable/playlist"
+        android:id="@+id/playlistIcon3"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="@+id/localPlaylistButton"
+        app:layout_constraintTop_toTopOf="@+id/localPlaylistButton" app:layout_constraintBottom_toBottomOf="@+id/localPlaylistButton"
+        app:layout_constraintStart_toStartOf="@+id/localPlaylistButton" app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginLeft="16dp" android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"/>
+</android.support.constraint.ConstraintLayout>

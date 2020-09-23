@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    jcenter()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '24.0.0'
+    defaultConfig {
+        applicationId "com.musicplayer.rpi.streamingspotifydemo"
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+        }
+    }
+}
+
+repositories {
+    jcenter()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation 'com.spotify.sdk:spotify-auth-release-1.1.0@aar'
+    implementation 'com.spotify.sdk:spotify-player-24-noconnect-2.20b@aar'
+
+    implementation 'com.android.support:customtabs:23.4.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+}
